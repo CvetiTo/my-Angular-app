@@ -1,0 +1,26 @@
+<div class="content">
+<form #CreateForm="ngForm" (ngSubmit)="itemService.addData(CreateForm.value)">
+    <div class="main">
+      <div class="input-fields">
+          <input name="title" ngModel
+          placeholder="title" 
+          id="title" type="text"
+          class="input-field" />
+      </div>
+      <div class="input-fields" >
+        <input name="image" ngModel
+        placeholder="image" 
+        id="image" type="text" 
+        class="input-field" />
+    </div>
+      <div class="input-fields" >
+          <input name="description" ngModel
+          placeholder="description" 
+          id="description" type="text" 
+          class="input-field" />
+      </div>
+     
+      <button>Add Data</button>
+    </div>
+    </form>
+  </div>

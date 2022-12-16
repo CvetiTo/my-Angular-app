@@ -1,0 +1,56 @@
+<div class="row space-top">
+    <div class="col-md-12">
+        <h1>Register User</h1>
+        <p>Please fill all fields.</p>
+    </div>
+</div>
+<form [formGroup]="form" class="register" (ngSubmit)="authService.SignUp(form.value)">
+    <div class="row">
+        <div class="form-group">
+            <label class="form-control-label" for="email">Email</label>
+            <input class="form-control" id="email" type="email" name="email" 
+            placeholder="peter@gmail.com" formControlName="email">
+            <ng-container *ngIf="form.get('email')?.touched">
+                <p *ngIf="form.get('email')?.errors?.['required']" class="error">
+                    Email is required!
+                </p>
+                <p *ngIf="form.get('email')?.errors?.['pattern']" class="error">
+                    Email must be valid!
+                </p>
+              </ng-container>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="password">Password</label>
+            <input class="form-control" id="password" type="password" name="password" 
+            placeholder="******" formControlName="password" (change)="onPasswordChange()">
+            <ng-container *ngIf="form.get('password')?.touched">
+                <p *ngIf="form.get('password')?.errors?.['required']" class="error">
+                    Password is required!
+                </p>
+                <p *ngIf="form.get('password')?.errors?.['minlength']" class="error">
+                    The password must be at least 3 simbols!
+                </p>
+              </ng-container>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="rePass">Repeat password</label>
+            <input class="form-control" id="rePass" type="password" name="rePass" 
+            placeholder="******" formControlName="rePass" (change)="onPasswordChange()">
+            <ng-container *ngIf="form.get('rePass')?.touched">
+                <p *ngIf="form.get('rePass')?.errors?.['required']" class="error">
+                    Repeat password is required!
+                </p>
+                <p *ngIf="form.get('rePass')?.errors?.['minlength']" class="error">
+                    The password must be at least 3 simbols!
+                </p>
+                <p *ngIf="rePass.hasError('mismatch')">
+                    Password do not match.</p>
+              </ng-container>
+        </div> 
+        <button class="btn btn-primary" type="button" (click)="clearForm()">Clear</button>          
+        <button [disabled]="form.invalid" class="btn btn-primary">Register</button>    
+    </div>
+</form>
+<div>
+    <p>Already have an account? <a routerLink="/login">Log In</a></p>    
+</div>

@@ -1,0 +1,33 @@
+
+form {
+    font-family: Georgia, serif;
+    margin-bottom: 5rem;
+    display: block;
+    width: 150%;
+    padding: 3.5rem 3.5rem;
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #124737;
+    background-color: #8ee719;
+    background-clip: padding-box;
+    border: 0.1rem solid #ddf507;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.col-md-12 p {
+    font-family: Georgia, serif;
+    color: #76af2a; 
+}
+
+
+div p{
+    color: rgb(119, 4, 4);
+    font-size: small;
+}
+
+div a {
+    font-size: large;
+    color: #0fe032;
+}

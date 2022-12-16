@@ -1,0 +1,11 @@
+<p>fileimg works!</p>
+<div class="form-container mat-elevation-z5 text-center" *ngIf="authService.isLoggedIn ">
+    <h1>File images</h1>
+    <div class="file-image">
+        <img width="120" height="120" [src]="authService.userData.photoURL ?? 'assets/images/christmas-6931584_960_720.jpg'"/>
+    </div>
+    <button mat-mini-fab (click)="inputField.click()">
+        Edit
+    </button>
+    <input #inputField type="file" hidden (change)="uploadImage($event, authService.userData)">
+</div>
