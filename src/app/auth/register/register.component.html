@@ -7,50 +7,66 @@
 <form [formGroup]="form" class="register" (ngSubmit)="authService.SignUp(form.value)">
     <div class="row">
         <div class="form-group">
-            <label class="form-control-label" for="email">Email</label>
-            <input class="form-control" id="email" type="email" name="email" 
-            placeholder="peter@gmail.com" formControlName="email">
-            <ng-container *ngIf="form.get('email')?.touched">
-                <p *ngIf="form.get('email')?.errors?.['required']" class="error">
-                    Email is required!
-                </p>
-                <p *ngIf="form.get('email')?.errors?.['pattern']" class="error">
-                    Email must be valid!
-                </p>
-              </ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput id="email" type="email" name="email" placeholder="peter@gmail.com"
+                    formControlName="email">
+                <mat-error>
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p *ngIf="form.get('email')?.errors?.['required']">
+                            Email is required!
+                        </p>
+                        <p *ngIf="form.get('email')?.errors?.['pattern']">
+                            Email must be valid!
+                        </p>
+                    </ng-container>
+                </mat-error>
+            </mat-form-field>
+
         </div>
         <div class="form-group">
-            <label class="form-control-label" for="password">Password</label>
-            <input class="form-control" id="password" type="password" name="password" 
-            placeholder="******" formControlName="password" (change)="onPasswordChange()">
-            <ng-container *ngIf="form.get('password')?.touched">
-                <p *ngIf="form.get('password')?.errors?.['required']" class="error">
-                    Password is required!
-                </p>
-                <p *ngIf="form.get('password')?.errors?.['minlength']" class="error">
-                    The password must be at least 3 simbols!
-                </p>
-              </ng-container>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput id="password" type="password" name="password" placeholder="******"
+                    formControlName="password" (change)="onPasswordChange()">
+
+                <mat-error>
+                    <ng-container *ngIf="form.get('password')?.touched">
+                        <p *ngIf="form.get('password')?.errors?.['required']" class="error">
+                            Password is required!
+                        </p>
+                        <p *ngIf="form.get('password')?.errors?.['minlength']" class="error">
+                            The password must be at least 3 simbols!
+                        </p>
+                    </ng-container>
+                </mat-error>
+            </mat-form-field>
         </div>
         <div class="form-group">
-            <label class="form-control-label" for="rePass">Repeat password</label>
-            <input class="form-control" id="rePass" type="password" name="rePass" 
-            placeholder="******" formControlName="rePass" (change)="onPasswordChange()">
-            <ng-container *ngIf="form.get('rePass')?.touched">
-                <p *ngIf="form.get('rePass')?.errors?.['required']" class="error">
-                    Repeat password is required!
-                </p>
-                <p *ngIf="form.get('rePass')?.errors?.['minlength']" class="error">
-                    The password must be at least 3 simbols!
-                </p>
-                <p *ngIf="rePass.hasError('mismatch')">
-                    Password do not match.</p>
-              </ng-container>
-        </div> 
-        <button class="btn btn-primary" type="button" (click)="clearForm()">Clear</button>          
-        <button [disabled]="form.invalid" class="btn btn-primary">Register</button>    
+            <mat-form-field appearance="fill">
+                <mat-label>Repeat password</mat-label>
+                <input matInput id="rePass" type="password" name="rePass" formControlName="rePass"
+                    (change)="onPasswordChange()">
+
+                <mat-error>
+                    <ng-container *ngIf="form.get('rePass')?.touched">
+                        <p *ngIf="form.get('rePass')?.errors?.['required']" class="error">
+                            Repeat password is required!
+                        </p>
+                        <p *ngIf="form.get('rePass')?.errors?.['minlength']" class="error">
+                            The password must be at least 3 simbols!
+                        </p>
+                        <p *ngIf="rePass.hasError('mismatch')">
+                            Password do not match.</p>
+                    </ng-container>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="warn" style="width: 50%;" type="button" (click)="clearForm()">Clear</button>
+        <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary"
+            style="width: 50%;">Register</button>
     </div>
 </form>
 <div>
-    <p>Already have an account? <a routerLink="/login">Log In</a></p>    
+    <p>Already have an account? <a routerLink="/login">Log In</a></p>
 </div>

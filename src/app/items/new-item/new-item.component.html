@@ -1,26 +1,22 @@
 <div class="content">
-<form #CreateForm="ngForm" (ngSubmit)="itemService.addData(CreateForm.value)">
+  <h1>Add your favorite bugs</h1>
+  <form #CreateForm="ngForm" (ngSubmit)="itemService.addData(CreateForm.value)">
     <div class="main">
-      <div class="input-fields">
-          <input name="title" ngModel
-          placeholder="title" 
-          id="title" type="text"
-          class="input-field" />
-      </div>
-      <div class="input-fields" >
-        <input name="image" ngModel
-        placeholder="image" 
-        id="image" type="text" 
-        class="input-field" />
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput name="title" ngModel id="title" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Image</mat-label>
+        <input matInput name="image" ngModel id="image" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput name="description" ngModel id="description" type="text">
+      </mat-form-field>
+      
+      <button mat-raised-button  color="primary"
+      style="width: 60%;">Add Data</button>
     </div>
-      <div class="input-fields" >
-          <input name="description" ngModel
-          placeholder="description" 
-          id="description" type="text" 
-          class="input-field" />
-      </div>
-     
-      <button>Add Data</button>
-    </div>
-    </form>
-  </div>
+  </form>
+</div>

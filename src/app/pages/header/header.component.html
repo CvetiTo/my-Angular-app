@@ -7,7 +7,7 @@
             close
         </mat-icon>
     </button>
-    <span class="logo">My responsive spa</span>
+    <span class="logo">My  spa<mat-icon>bug_report</mat-icon></span>
 
     <span class="example-spacer"></span>
     <button *ngIf="!authService.isLoggedIn" mat-icon-button class="example-icon favorite-icon"
@@ -26,11 +26,12 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
+        <div *ngIf="authService.isLoggedIn">
         <img class="avatar mat-elevation-z8"
             [src]="authService.userData.photoURL ?? 'assets/images/christmas-6931584_960_720.jpg'" />
         <h4 class="name">{{ authService.userData.email }}</h4>
         <p class="designation">Software Engineer</p>
-
+        </div>
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button" routerLink="/home">

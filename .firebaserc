@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-f836c": {
+      "hosting": {
+        "my-app": [
+          "angular-firebase-f836c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-f836c"
+  }
+}

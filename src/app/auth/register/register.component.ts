@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
     }
   }
   
-  // getting the form control elements
   get password(): AbstractControl {
     return this.form.controls['password'];
   }

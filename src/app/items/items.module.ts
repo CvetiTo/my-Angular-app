@@ -7,12 +7,12 @@ import { NewItemComponent } from './new-item/new-item.component';
 import { ItemsRoutingModule } from './items-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ItemDetailsComponent } from './item-details/item-details.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import {MatButtonModule} from '@angular/material/button';
     ItemListItemComponent,
     ItemsPageComponent,
     NewItemComponent,
-    ItemDetailsComponent,
     
   ],
   imports: [
@@ -31,6 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports:[
     ItemListItemComponent

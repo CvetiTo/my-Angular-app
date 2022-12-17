@@ -11,10 +11,12 @@ h2 {
     text-align: center;
     color: red;
 }
-a {
-    background: rgb(36, 167, 24);
-    padding: 8px 12px;
-    color: rgb(23, 66, 10); 
-    position: absolute;
-    right: 500px;
+a.link {
+    background: #5aaa2b;;
+    padding: 0.2rem 0.5rem;
+    right: 30rem;
+    font-size: small;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
 }

@@ -1,24 +1,19 @@
-<h1>Welcome to our website!</h1> 
-<h2>
-    The Travels team is pleased to welcome you on this website.
-</h2>
-<div>
-    We are sure that you want
-   <span>Travels</span>
-    to be your speedy partner.    
-</div> 
+<div class="cards-header">
+  <h1>Welcome to our website!</h1>
+  <h2>
+    The <span>Bugs</span> team is pleased to welcome you on this website.
+  </h2>
+  
+    <h2>We are sure that you want to see</h2> 
+    
+    <h3>Last 3 published <span>Bugs</span>: </h3>
+    <div class="cards-container" *ngIf="items">
+      <app-item-list-item *ngFor="let item of items" [item]="item">
 
-<div class="cards-container"> 
-    <h2>Freight Offers</h2>
-    <div class="cards-header" *ngIf="items">
-      <div >
-        <app-item-list-item *ngFor="let item of items" [item]="item" >
-           
-        </app-item-list-item>
-      </div>
-    </div>   
-  </div>   
-
-<div *ngIf="!items">
-  Loading...
+      </app-item-list-item>
+    </div>
+    <div *ngIf="!items">
+      Loading...
+    </div>
+  
 </div>
