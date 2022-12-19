@@ -14,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemsModule } from '../items/items.module';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import { ItemsModule } from '../items/items.module';
     MatDividerModule,
     MatIconModule,
     ItemsModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class PagesModule { }

@@ -1,22 +1,44 @@
 <div class="content">
-  <h1>Add your favorite bugs</h1>
+
   <form #CreateForm="ngForm" (ngSubmit)="itemService.addData(CreateForm.value)">
+    <div class="buttons">
+      <h1>Add your favorite bugs
+        <button mat-mini-fab color="basic" type="button" (click)="CreateForm.reset()"
+          routerLink="/catalog"><mat-icon>clear</mat-icon></button>
+      </h1>
+    </div>
     <div class="main">
       <mat-form-field appearance="fill">
         <mat-label>Title</mat-label>
-        <input matInput name="title" ngModel id="title" type="text">
+        <input matInput name="title" ngModel required minlength="3" id="title" type="text" #title="ngModel">
+        <mat-error *ngIf="title.touched && title.invalid">
+          <mat-error *ngIf="title.errors?.['required']">Title is required!</mat-error>
+          <mat-error *ngIf="title.errors?.['minlength']">The field must be at least 3 simbols!</mat-error>
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Image</mat-label>
-        <input matInput name="image" ngModel id="image" type="text">
+        <input matInput name="image" ngModel required minlength="6" id="image" type="text" #image="ngModel">
+        <mat-error *ngIf="image.touched && image.invalid">
+          <mat-error *ngIf="image.errors?.['required']">Image is required!</mat-error>
+          <mat-error *ngIf="image.errors?.['minlength']">The field must be at least 6 simbols!</mat-error>
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Description</mat-label>
-        <input matInput name="description" ngModel id="description" type="text">
+        <input matInput name="description" ngModel required minlength="6" id="description" type="text"
+          #description="ngModel">
+        <mat-error *ngIf="description.touched && description.invalid">
+          <mat-error *ngIf="description.errors?.['required']">Description is required!</mat-error>
+          <mat-error *ngIf="description.errors?.['minlength']">The field must be at least 6 simbols!</mat-error>
+        </mat-error>
       </mat-form-field>
-      
-      <button mat-raised-button  color="primary"
-      style="width: 60%;">Add Data</button>
+      <div class="buttons">
+        <button mat-raised-button color="primary" style="width: 60%;" [disabled]="CreateForm.invalid">
+          Add bugs data
+        </button>
+        <button mat-raised-button color="warn" type="button" (click)="CreateForm.reset()">Clear</button>
+      </div>
     </div>
   </form>
 </div>

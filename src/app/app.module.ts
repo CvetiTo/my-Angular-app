@@ -13,16 +13,16 @@ import { PagesModule } from './pages/pages.module';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { ItemsModule } from './items/items.module';
-import { FileimgComponent } from './fileimg/fileimg.component';
+import { ProfileComponent } from './profile/profile.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileimgComponent,
+    ProfileComponent,
  
   ],
   imports: [
@@ -38,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideStorage(() => getStorage()),
     HotToastModule.forRoot(),
     BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [

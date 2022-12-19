@@ -1,0 +1,11 @@
+<div class="form-container mat-elevation-z5 text-center" *ngIf="authService.isLoggedIn ">
+    <h1 class="title">Profile to <span>{{authService.userData.email}}</span>!</h1>
+    <div class="file-image">
+        <img max-width="50rem" max-height="50rem" [src]="authService.userData.photoURL ?? 'assets/images/blank-profile-picture-973461__340.webp'"/>
+    </div>
+    <button mat-raised-button color="primary" style="width: 50%;"
+     (click)="inputField.click()">
+        Add your photo
+    </button>
+    <input #inputField type="file" hidden (change)="uploadImage($event, authService.userData)">
+</div>

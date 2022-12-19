@@ -1,4 +1,61 @@
-.card-wrapper{
+.card-wrapper {
    margin: 5rem;
-   box-shadow:aquamarine;
+   box-shadow: aquamarine;
+}
+
+.edit-container {
+   border: 1px gray;
+   border-radius: 3px;
+   max-width: 500px;
+   max-height: 500px;
+   -webkit-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+}
+
+.edit-title {
+   margin-top: 1rem;
+   color: #201f22;
+   font-weight: 600;
+   font-size: larger;
+}
+
+.input-fields {
+   margin-bottom: 2rem;
+}
+
+.input-field {
+   font-size: 1rem;
+   background-color: #f5f5f5;
+   border-top: none;
+   border-left: none;
+   border-radius: 2px;
+   padding: 1rem;
+   border-bottom: 1px solid #4e4d4d;
+   transition: 0.5s;
+   -webkit-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"].input-field:hover {
+   cursor: pointer;
+   background-color: #cdcdcd;
+   border-bottom: 1px solid #4e4d4d;
+}
+
+button {
+   margin: 0.3rem;
+}
+
+mat-card-title {
+   margin-top: 1rem;
+   font-weight: 800;
+   color: #201f22;
+}
+
+.descrip {
+   margin-top: 1rem;
+   margin-bottom: 2rem;
+   font-size: medium;
 }

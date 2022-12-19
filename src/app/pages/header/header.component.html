@@ -28,9 +28,9 @@
     <mat-sidenav #sidenav="matSidenav">
         <div *ngIf="authService.isLoggedIn">
         <img class="avatar mat-elevation-z8"
-            [src]="authService.userData.photoURL ?? 'assets/images/christmas-6931584_960_720.jpg'" />
+            [src]="authService.userData.photoURL ?? 'assets/images/blank-profile-picture-973461__340.webp'" />
         <h4 class="name">{{ authService.userData.email }}</h4>
-        <p class="designation">Software Engineer</p>
+        <p class="designation">Bugs Engineer</p>
         </div>
         <mat-divider></mat-divider>
 

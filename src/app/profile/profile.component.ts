@@ -6,11 +6,11 @@ import { ImgUploadService } from '../services/img-upload.service';
 import { concatMap } from 'rxjs';
 
 @Component({
-  selector: 'app-fileimg',
-  templateUrl: './fileimg.component.html',
-  styleUrls: ['./fileimg.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class FileimgComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   user$ = this.authService.userData
   constructor(
     public authService: AuthService,

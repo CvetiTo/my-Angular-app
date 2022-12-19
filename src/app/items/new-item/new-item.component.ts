@@ -7,6 +7,7 @@ import { ItemsService } from 'src/app/services/items.service';
   styleUrls: ['./new-item.component.css']
 })
 export class NewItemComponent {
+  
   constructor(
     
     public itemService: ItemsService,

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { AuthGuard } from './auth/guard/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { FileimgComponent } from './fileimg/fileimg.component';
+import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path: '',
@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: FileimgComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

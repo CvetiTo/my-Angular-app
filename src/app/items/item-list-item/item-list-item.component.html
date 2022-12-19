@@ -1,49 +1,54 @@
 <div *ngIf="!!item" class="card-wrapper" style="width: 20rem;">
-    <mat-card  *ngIf="!isEdit; else elseBlock">
-      <mat-card-title><h1>{{ item.title }}</h1></mat-card-title>
-      <img mat-card-image style="width: 100%;" src={{item.image}} alt="">
-      <mat-card-content>
-        {{item.description}}
-      </mat-card-content> 
-      <div>
-        <button mat-raised-button color="primary" style="width: 20%;"
-        (click)="isEdit =true">Edit</button>
-        <button mat-raised-button color="warn" style="width: 20%;"
-         (click)="itemService.deleteData(item.id)">
-          Delete
-        </button>
-    </div>
+    <mat-card *ngIf="!isEdit; else elseBlock">
+        <mat-card-title>
+            <h1>{{ item.title }}</h1>
+        </mat-card-title>
+        <mat-card-subtitle>
+            Created at: {{ item.created_at.toDate() | date:'medium' }}
+        </mat-card-subtitle>
+        <img mat-card-image style="width: 100%;" src={{item.image}} alt="">
+        <mat-card-content>
+            <p class="descrip">
+                {{item.description}}
+            </p>
+        </mat-card-content>
+        <div *ngIf="isLoggedIn &&  (item.owner).toString() == userUid">
+            <button mat-raised-button color="primary" style="width: 20%;" (click)="isEdit=true">Edit</button>
+            <button mat-raised-button color="warn" style="width: 20%;" (click)="itemService.deleteData(item.id)">
+                Delete
+            </button>
+        </div>
+        <div *ngIf="isLoggedIn &&  (item.owner).toString() != userUid">
+            <button mat-fab extended color="accent" type="button" (click)="likeHandle()">
+                <mat-icon>favorite</mat-icon>
+                Likes: {{numberOfLikes}}
+            </button>
+        </div>
     </mat-card>
-    
 </div>
-<ng-template #elseBlock>
-  <div class="card">
-      <div class="card-body">
-          <div class="card-title">
-              Edit 
-          </div>
-          <div class="row">
-              <div class="form-group">
-                  <div class="col-md-12">
-                      <input type="text" [(ngModel)]="item!.title" class="form-control">
-                  </div>
-                  <div class="col-md-12">
-                      <input type="text" [(ngModel)]="item!.image" class="form-control">
-                  </div>
-                  <div class="col-md-12">
-                      <input type="text" [(ngModel)]="item!.description" class="form-control">
-                  </div>
-              </div>
-          </div>
 
-          <button (click)="isEdit =false" mat-raised-button color="warn" style="width: 20%;" >Cancel 
-          </button>
-          <button (click)="updateRecord(item!)" mat-raised-button color="primary" style="width: 20%;" 
-           >
-            Update
-         </button>
-         
-     
-      </div>
-  </div>
+<ng-template #elseBlock>
+    <div class="edit-container">
+        <br>
+        <h1 class="edit-title"> Edit</h1>
+        <br>
+        <div class="input-fields">
+            <input class="input-field" type="text" [(ngModel)]="item!.title">
+        </div>
+        <div class="input-fields">
+            <input class="input-field" type="text" [(ngModel)]="item!.image" >
+        </div>
+        <div class="input-fields">
+            <input class="input-field" type="text" [(ngModel)]="item!.description" >
+        </div>
+        <div class="buttons-fields">
+            <button (click)="isEdit =false" mat-raised-button color="warn" style="width: 20%;">
+                Cancel
+            </button>
+            <button (click)="updateRecord(item!)" mat-raised-button color="primary" style="width: 20%;">
+                Update
+            </button>
+        </div>
+        <br>
+    </div>
 </ng-template>

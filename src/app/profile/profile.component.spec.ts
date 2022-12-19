@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FileimgComponent } from './fileimg.component';
+import { FileimgComponent } from './profile.component';
 
 describe('FileimgComponent', () => {
   let component: FileimgComponent;

@@ -12,8 +12,9 @@
 
       </app-item-list-item>
     </div>
-    <div *ngIf="!items">
-      Loading...
+    <div class="spinner" *ngIf="!items">
+      <h1>Loading...</h1>
+      <mat-spinner></mat-spinner>
     </div>
   
 </div>

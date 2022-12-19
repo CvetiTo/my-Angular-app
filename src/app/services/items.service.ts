@@ -35,9 +35,10 @@ export class ItemsService {
     const user = JSON.parse(localStorage.getItem('user')!);
     return (user !== null) ? true : false;
   }
+  
   addData(value: any) {
     const user = JSON.parse(localStorage.getItem('user')!);
-    console.log(user.uid);
+    //console.log(user.uid);
     const owner = user.uid;
     const dbInstance = collection(this.firestore, 'items');
     addDoc(dbInstance, { ...value, owner, created_at: serverTimestamp() })
@@ -56,7 +57,7 @@ export class ItemsService {
 
   getSortedData(): Observable<Item[] >{
     const dbInstance = collection(this.firestore, 'items');
-    const q = query(dbInstance, orderBy('created_at', 'asc'), limit(3));
+    const q = query(dbInstance, orderBy('created_at', 'desc'), limit(3));
     return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
   }
 
@@ -76,5 +77,5 @@ export class ItemsService {
         alert(err.message)
       })
   }
-
+  
 }
