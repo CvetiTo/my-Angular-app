@@ -68,7 +68,9 @@ export class ItemsService {
   
   deleteData(id: string) {
     const dataToDelete = doc(this.firestore, 'items', id);
-    deleteDoc(dataToDelete)
+    let result = confirm("Want to delete?");
+    if(result){
+      deleteDoc(dataToDelete)
       .then(() => {
         alert('Data Deleted');
         this.getData()
@@ -76,6 +78,8 @@ export class ItemsService {
       .catch((err) => {
         alert(err.message)
       })
+    }
+    
   }
   
 }
