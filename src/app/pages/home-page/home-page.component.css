@@ -33,6 +33,9 @@ h3 {
   display: block;
   text-align: center;
 }
+.spinner ::ng-deep circle {
+  stroke: green;
+  }
 mat-spinner{
   margin:10rem 15rem ;
   font-size: 200px;

@@ -10,8 +10,9 @@
         <mat-card-content>
             <p class="descrip">
                 {{item.description}}
-            </p>
+            </p>  
         </mat-card-content>
+        <mat-divider></mat-divider>
         <div *ngIf="isLoggedIn &&  (item.owner).toString() == userUid">
             <button mat-raised-button color="primary" style="width: 20%;" (click)="isEdit=true">Edit</button>
             <button mat-raised-button color="warn" style="width: 20%;" (click)="itemService.deleteData(item.id)">

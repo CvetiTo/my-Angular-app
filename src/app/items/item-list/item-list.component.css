@@ -10,11 +10,11 @@
     color: green;
     text-shadow: 0px 1px 1px rgba(174, 190, 26, 0.9);
 }
-.spinner{
-    font-size: 10rem;
-}
+
+.spinner ::ng-deep circle {
+    stroke: green;
+    }
 mat-spinner{
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin: 10rem 15rem;
     font-size: 200px;
 }

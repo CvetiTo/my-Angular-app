@@ -8,14 +8,17 @@
    border-radius: 3px;
    max-width: 500px;
    max-height: 500px;
-   -webkit-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
-   -moz-box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
-   box-shadow: 0px -1px 7px -3px rgba(0, 0, 0, 0.2);
+   background: rgb(45,87,25);
+  background: linear-gradient(90deg, rgba(45,87,25,1) 0%, rgba(74,198,15,1) 16%, rgba(77,209,14,1) 83%, rgba(45,87,25,1) 100%); 
+  box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
+  -webkit-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
+  
 }
 
 .edit-title {
    margin-top: 1rem;
-   color: #201f22;
+   color: whitesmoke;
    font-weight: 600;
    font-size: larger;
 }
@@ -53,9 +56,11 @@ mat-card-title {
    font-weight: 800;
    color: #201f22;
 }
-
+mat-divider{
+   margin-top: 1rem;
+}
 .descrip {
    margin-top: 1rem;
-   margin-bottom: 2rem;
    font-size: medium;
+   color: #201f22;
 }
