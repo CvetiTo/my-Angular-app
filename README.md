@@ -2,7 +2,7 @@
 
 BugsApp is an application for the SoftUni Angular course. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
-For my back-end I use  Firebase  service(for items - Firestore Database, for users - Authentication , for upload image- Storage ).
+
 ## Features
 
 ###	Application Structure
@@ -11,7 +11,7 @@ The application  has:
 
 The public part of my project  is visible without authentication. 
 The visitors can see the Home page,  Login and Registred  pages, and user's public data on the Catalog page with available Bugs.
-####	private part (available to registered users)
+####	Private part (available to registered users)
 
 Registered users have personal area in the web application accessible after successful login. This area contains:
 -	 User profile management feature - he will add a profile picture.
@@ -19,30 +19,31 @@ Registered users have personal area in the web application accessible after succ
 
 ###	General functionality
 •	Dynamic pages:
--	Home page - generate Last 3 published Bugs - sorted by data to create;
+- Home page - generate Last 3 published Bugs - sorted by data to create;
 -	Profile page - generate information of user, and user make upload-change your profile Image;
 -	Catalog page - generate information about all publications.
--if the current user is not logged in, no buttons will be displayed, he just Read information. 
--if the current user is logged in but not the author of the post, button [Likes] will show ;
--if the current user is the author of the post, he should see the [Delete] and [Edit]  buttons ;
-He make Delete your post, or Update it.
+    - if the current user is not logged in, no buttons will be displayed, he just Read information; 
+    - if the current user is logged in but not the author of the post, button [Likes] will show;
+    - if the current user is the author of the post, he should see the [Delete] and [Edit] buttons. He can delete his post or update it;
 -	New bug  page - generate form to Create new publication;
+
 •	Static pages:
 -	Not-Found page - for wrong routes;
 
 ###	Guards
 The SecurityRequirements about which users can access specific functionalities and pages.
-•	Guest (not logged in) users can access the Home page.
-•	Guest (not logged in) users can access the Login page and functionality.
-•	Guest (not logged in) users can access the Register page and functionality.
-•	Guest (not logged in) and Users (logged in) can access the Catalog page (Listed all bugs).
-•	Users (logged in) can access the Home page.
-•	Users (logged in) can access the Catalog page and functionality.
-o	    Users (not bugs -post owners) can Like  bugs.
-o	    Users(bugs -post owners) can  Edit and  Delete the current bug post.
-•	Users (logged in) can access the Profile page and functionality.
-•	Users (logged in) can access the  New bug page and functionality.
-•	Users (logged in) can access the Logout functionality.
+
+-	Guest (not logged in) users can access the Home page.
+-	Guest (not logged in) users can access the Login page and functionality.
+-	Guest (not logged in) users can access the Register page and functionality.
+-	Guest (not logged in) and Users (logged in) can access the Catalog page (Listed all bugs).
+-	Users (logged in) can access the Home page.
+-	Users (logged in) can access the Catalog page and functionality.
+	   - Users (not bugs -post owners) can Like  bugs.
+	   - Users(bugs -post owners) can  Edit and  Delete the current bug post.
+-	Users (logged in) can access the Profile page and functionality.
+-	Users (logged in) can access the  New bug page and functionality.
+-	Users (logged in) can access the Logout functionality.
 ###	Other functionality
 ####	Error handling and Data validation
 #####	Login/Register
