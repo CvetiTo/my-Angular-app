@@ -43,7 +43,7 @@ export class ItemsService {
     const dbInstance = collection(this.firestore, 'items');
     addDoc(dbInstance, { ...value, owner, created_at: serverTimestamp() })
       .then(() => {
-        alert('Data sent');
+        //alert('Data sent');
         this.router.navigate(['/catalog']);
       })
       .catch((err) => {
@@ -72,7 +72,7 @@ export class ItemsService {
     if(result){
       deleteDoc(dataToDelete)
       .then(() => {
-        alert('Data Deleted');
+        //alert('Data Deleted');
         this.getData()
       })
       .catch((err) => {

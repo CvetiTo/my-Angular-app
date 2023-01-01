@@ -8,8 +8,10 @@
 <div>
   <h3>Last 3 published <span>Bugs</span>: </h3>
   <div class="cards-container" *ngIf="items">
-    <app-item-list-item *ngFor="let item of items" [item]="item">
+    <marquee behavior="alternate">
+      <app-item-list-item *ngFor="let item of items" [item]="item">
     </app-item-list-item>
+    </marquee>    
   </div>
   <div class="spinner" *ngIf="!items">
     <h1>Loading...</h1>
