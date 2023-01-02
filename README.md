@@ -2,7 +2,7 @@
 
 BugsApp is an application for the SoftUni Angular course. 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
-
+Domain: https://angular-firebase-f836c.web.app/
 ## Features
 
 ###	Application Structure
