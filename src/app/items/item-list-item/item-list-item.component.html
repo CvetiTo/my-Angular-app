@@ -1,7 +1,8 @@
 <div *ngIf="!!item" class="card-wrapper" style="width: 20rem;">
     <mat-card *ngIf="!isEdit; else elseBlock">
+        <mat-card-subtitle class="type-bugs">{{item.type}}</mat-card-subtitle>
         <mat-card-title>
-            <h1>{{ item.title }}</h1>
+            <h1>{{ item.title }} </h1>
         </mat-card-title>
         <mat-card-subtitle>
             Created at: {{ item.created_at.toDate() | date:'medium' }}
@@ -33,6 +34,9 @@
         <br>
         <h1 class="edit-title"> Edit</h1>
         <br>
+        <div class="input-fields">
+            <input class="input-field" type="text" [(ngModel)]="item!.type">
+        </div>
         <div class="input-fields">
             <input class="input-field" type="text" [(ngModel)]="item!.title">
         </div>

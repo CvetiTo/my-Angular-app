@@ -46,6 +46,14 @@
             <mat-icon>collections</mat-icon>
             <span>Catalog</span>
         </button>
+        <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
+            <mat-icon> more_horiz </mat-icon> 
+            <span>Beetles</span>
+        </button>
+        <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
+            <mat-icon> more_horiz </mat-icon> 
+            <span>Spiders</span>
+        </button>
         <mat-divider></mat-divider>
         <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
             <mat-icon>add_box</mat-icon>

@@ -16,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { BeetlesComponent } from './beetles/beetles.component';
+import { SpidersComponent } from './spiders/spiders.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatDividerModule } from '@angular/material/divider';
     ItemListItemComponent,
     ItemsPageComponent,
     NewItemComponent,
+    BeetlesComponent,
+    SpidersComponent,
     
   ],
   imports: [

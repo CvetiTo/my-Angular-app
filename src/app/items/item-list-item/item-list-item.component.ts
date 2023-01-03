@@ -33,12 +33,14 @@ export class ItemListItemComponent implements OnChanges{
   editRecord(item: Item) {
     item.title = item.title,
       item.image = item.image,
-      item.description = item.description
+      item.description = item.description,
+      item.type = item.type
   }
   updateRecord(item: Item) {
     item['title'] = item.title;
     item['image'] = item.image;
     item['description'] = item.description;
+    item['type'] = item.type;
     this.itemService.updateData(this.item);
 
   }

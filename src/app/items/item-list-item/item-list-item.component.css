@@ -64,3 +64,10 @@ mat-divider{
    font-size: medium;
    color: #201f22;
 }
+.type-bugs{
+   text-align: right;
+   text-transform: uppercase;
+   color: darkgreen;
+   padding-top: 0.1rem;
+   padding-right: 0.3rem;
+}

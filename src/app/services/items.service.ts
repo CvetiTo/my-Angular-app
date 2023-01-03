@@ -7,6 +7,7 @@ import {
   orderBy,
   limit,
   query,
+  where,
   doc,
   updateDoc,
   deleteDoc,
@@ -60,7 +61,16 @@ export class ItemsService {
     const q = query(dbInstance, orderBy('created_at', 'desc'), limit(3));
     return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
   }
-
+  getSortedBeetlesData(): Observable<Item[] >{
+    const dbInstance = collection(this.firestore, 'items');
+    const q = query(dbInstance, where('type', '==', 'beetle'));
+    return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
+  }
+  getSortedSpidersData(): Observable<Item[] >{
+    const dbInstance = collection(this.firestore, 'items');
+    const q = query(dbInstance, where('type', '==', 'spider'));
+    return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
+  }
   updateData(item:any) {
     const dataToUpdate = doc(this.firestore, `items/${item.id}`);
     return updateDoc(dataToUpdate, {...item});   

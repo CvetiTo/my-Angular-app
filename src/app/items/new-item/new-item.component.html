@@ -9,6 +9,14 @@
     </div>
     <div class="main">
       <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <select matNativeControl name="type" ngModel required id="type">
+          <option value="beetle">beetle</option>
+          <option value="spider">spider</option>
+          <option value="insects">insects</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
         <mat-label>Title</mat-label>
         <input matInput name="title" ngModel required minlength="3" id="title" type="text" #title="ngModel">
         <mat-error *ngIf="title.touched && title.invalid">

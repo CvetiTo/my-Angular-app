@@ -6,5 +6,6 @@ export interface Item {
     image: string;
     description: string;
     created_at: any;
+    type?: string;
     owner: User;
 }
