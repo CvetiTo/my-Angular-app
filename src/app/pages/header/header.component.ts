@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   @ViewChild(MatSidenav) 
   sidenav!: MatSidenav;
-
+ 
   constructor(
     private observer: BreakpointObserver,
     public authService: AuthService,

@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { BeetlesComponent } from './beetles/beetles.component';
 import { SpidersComponent } from './spiders/spiders.component';
+import { InsectsComponent } from './insects/insects.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SpidersComponent } from './spiders/spiders.component';
     NewItemComponent,
     BeetlesComponent,
     SpidersComponent,
+    InsectsComponent,
     
   ],
   imports: [

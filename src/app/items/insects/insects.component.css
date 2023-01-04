@@ -1,0 +1,20 @@
+.catalog-container {
+    margin-top: 3rem;
+    text-align: center;
+    color: black;
+    font-size: large;   
+}
+.sub{
+    margin-top: 0;
+    font-weight: 600;
+    color: green;
+    text-shadow: 0px 1px 1px rgba(174, 190, 26, 0.9);
+}
+
+.spinner ::ng-deep circle {
+    stroke: green;
+    }
+mat-spinner{
+    margin: 10rem 15rem;
+    font-size: 200px;
+}

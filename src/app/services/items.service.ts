@@ -71,6 +71,11 @@ export class ItemsService {
     const q = query(dbInstance, where('type', '==', 'spider'));
     return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
   }
+  getSortedInsectsData(): Observable<Item[] >{
+    const dbInstance = collection(this.firestore, 'items');
+    const q = query(dbInstance, where('type', '==', 'insect'));
+    return collectionData(q,{ idField: 'id'}) as Observable<Item[]>;
+  }
   updateData(item:any) {
     const dataToUpdate = doc(this.firestore, `items/${item.id}`);
     return updateDoc(dataToUpdate, {...item});   
@@ -91,5 +96,4 @@ export class ItemsService {
     }
     
   }
-  
 }

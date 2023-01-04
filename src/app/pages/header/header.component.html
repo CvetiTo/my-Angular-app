@@ -27,10 +27,10 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav">
         <div *ngIf="authService.isLoggedIn">
-        <img class="avatar mat-elevation-z8"
-            [src]="authService.userData.photoURL ?? 'assets/images/blank-profile-picture-973461__340.webp'" />
-        <h4 class="name">{{ authService.userData.email }}</h4>
-        <p class="designation">Bugs Engineer</p>
+            <img class="avatar mat-elevation-z8"
+                [src]="authService.userData.photoURL ?? 'assets/images/blank-profile-picture-973461__340.webp'" />
+            <h4 class="name">{{ authService.userData.email }}</h4>
+            <p class="designation">Bugs Engineer</p>
         </div>
         <mat-divider></mat-divider>
 
@@ -46,14 +46,11 @@
             <mat-icon>collections</mat-icon>
             <span>Catalog</span>
         </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
-            <mat-icon> more_horiz </mat-icon> 
-            <span>Beetles</span>
-        </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
-            <mat-icon> more_horiz </mat-icon> 
-            <span>Spiders</span>
-        </button>
+        <select matNativeControl name="type" ngModel required id="type">
+            <option value="beetle" routerLink="/catalog/beetles">BEETLES</option>
+            <option value="spider" routerLink="/catalog/spiders">SPIDERS</option>
+            <option value="insect" routerLink="/catalog/insects" >INSECTS</option>
+        </select>
         <mat-divider></mat-divider>
         <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
             <mat-icon>add_box</mat-icon>
