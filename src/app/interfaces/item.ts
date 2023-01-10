@@ -7,6 +7,6 @@ export interface Item {
     description: string;
     created_at: any;
     type?: string;
-    likes?: [];
+    likes?: string[];
     owner: User;
 }

@@ -12,6 +12,7 @@ import {
   updateDoc,
   deleteDoc,
   serverTimestamp,
+  arrayUnion,
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Item } from '../interfaces/item';
@@ -23,7 +24,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemsService {
-  
+  userUid:string | undefined;
   constructor(private http: HttpClient,
     public firestore: Firestore,
     private router: Router,
@@ -42,7 +43,7 @@ export class ItemsService {
     //console.log(user.uid);
     const owner = user.uid;
     const dbInstance = collection(this.firestore, 'items');
-    addDoc(dbInstance, { ...value, owner, created_at: serverTimestamp() })
+    addDoc(dbInstance, { ...value, owner, created_at: serverTimestamp(), likes:[] })
       .then(() => {
         //alert('Data sent');
         this.router.navigate(['/catalog']);
@@ -80,7 +81,11 @@ export class ItemsService {
     const dataToUpdate = doc(this.firestore, `items/${item.id}`);
     return updateDoc(dataToUpdate, {...item});   
   }
-  
+  likeBug(item:any) {
+    const dataToUpdate = doc(this.firestore, `/items/${item.id}`);
+    this.userUid = JSON.parse(localStorage.getItem('user')!).uid;
+   return updateDoc(dataToUpdate, {...item, likes:arrayUnion(this.userUid)});
+  }
   deleteData(id: string) {
     const dataToDelete = doc(this.firestore, 'items', id);
     let result = confirm("Want to delete?");

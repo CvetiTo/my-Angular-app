@@ -11,7 +11,7 @@
         <mat-card-content>
             <p class="descrip">
                 {{item.description}}
-            </p>  
+            </p>
         </mat-card-content>
         <mat-divider></mat-divider>
         <div *ngIf="isLoggedIn &&  (item.owner).toString() == userUid">
@@ -20,12 +20,17 @@
                 Delete
             </button>
         </div>
-        <div *ngIf="isLoggedIn &&  (item.owner).toString() != userUid">
-            <button mat-fab extended color="accent" type="button" (click)="likeHandle()">
-                <mat-icon>favorite</mat-icon>
-                Likes: {{numberOfLikes}}
-            </button>
+        <div *ngIf="isLoggedIn &&  (item.owner).toString() != userUid; else elseLike">
+            <div *ngIf="!canLike">
+                <button mat-fab extended color="accent" type="button" (click)="likeHandle(item)">
+                    <mat-icon>favorite</mat-icon>
+                    Likes: {{item.likes?.length}}
+                </button>
+            </div>
         </div>
+        <ng-template #elseLike>
+            <div class="likes"> Likes: {{item.likes?.length}} </div>
+        </ng-template>
     </mat-card>
 </div>
 
@@ -41,10 +46,10 @@
             <input class="input-field" type="text" [(ngModel)]="item!.title">
         </div>
         <div class="input-fields">
-            <input class="input-field" type="text" [(ngModel)]="item!.image" >
+            <input class="input-field" type="text" [(ngModel)]="item!.image">
         </div>
         <div class="input-fields">
-            <input class="input-field" type="text" [(ngModel)]="item!.description" >
+            <input class="input-field" type="text" [(ngModel)]="item!.description">
         </div>
         <div class="buttons-fields">
             <button (click)="isEdit =false" mat-raised-button color="warn" style="width: 20%;">

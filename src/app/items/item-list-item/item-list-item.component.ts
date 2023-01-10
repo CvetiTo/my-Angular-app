@@ -10,24 +10,25 @@ import { ItemsService } from 'src/app/services/items.service';
   templateUrl: './item-list-item.component.html',
   styleUrls: ['./item-list-item.component.css']
 })
-export class ItemListItemComponent implements OnChanges{
+export class ItemListItemComponent implements OnChanges {
   isLoggedIn: boolean = this.authService.isLoggedIn;
   isEdit: boolean = false;
-  userUid:string | undefined; 
-  numberOfLikes: number = 0;
+  userUid: string | undefined;
+  canLike: boolean = false;
+
   @Input() item: Item | undefined;
-  
+
   constructor(
     public itemService: ItemsService,
     public authService: AuthService
   ) { }
-    
-  ngOnChanges() { 
-     this.item?.owner;
-     if(this.isLoggedIn == true){
+
+  ngOnChanges() {
+    this.item?.owner;
+    if (this.isLoggedIn == true) {
       this.userUid = JSON.parse(localStorage.getItem('user')!).uid;
-     }
-     
+    }
+
   }
 
   editRecord(item: Item) {
@@ -44,9 +45,13 @@ export class ItemListItemComponent implements OnChanges{
     this.itemService.updateData(this.item);
 
   }
-  likeHandle(){
-    this.numberOfLikes++;
+  likeHandle(item: Item) {
+    if (this.userUid) {
+      console.log(item.likes);
+      this.canLike = item.likes?.includes(this.userUid.toString()) ? true : false;
+      item.likes = item.likes;
+      this.itemService.likeBug(this.item)
+
+    }
   }
-   
-  
 }

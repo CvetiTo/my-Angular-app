@@ -46,10 +46,10 @@
             <mat-icon>collections</mat-icon>
             <span>Catalog</span>
         </button>
-        <select matNativeControl name="type" ngModel required id="type">
-            <option value="beetle" routerLink="/catalog/beetles">BEETLES</option>
-            <option value="spider" routerLink="/catalog/spiders">SPIDERS</option>
-            <option value="insect" routerLink="/catalog/insects" >INSECTS</option>
+        <select #type class="selectBtn"  name="type" ngModel required  (change)="(type.value)">
+            <option default class="optionBtn" value="beetle" routerLink="/catalog/beetles">BEETLES</option>
+            <option class="optionBtn" value="spider" routerLink="/catalog/spiders">SPIDERS</option>
+            <option class="optionBtn" value="insect" routerLink="/catalog/insects" >INSECTS</option>
         </select>
         <mat-divider></mat-divider>
         <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">

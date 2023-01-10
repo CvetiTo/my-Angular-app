@@ -15,7 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { ItemsModule } from '../items/items.module';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
-
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatIconModule,
     ItemsModule,
     MatProgressSpinnerModule,
+    MatNativeDateModule,
   ]
 })
 export class PagesModule { }
