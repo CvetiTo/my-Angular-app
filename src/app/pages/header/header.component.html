@@ -46,11 +46,18 @@
             <mat-icon>collections</mat-icon>
             <span>Catalog</span>
         </button>
-        <select #type class="selectBtn"  name="type" ngModel required  (change)="(type.value)">
-            <option default class="optionBtn" value="beetle" routerLink="/catalog/beetles">BEETLES</option>
-            <option class="optionBtn" value="spider" routerLink="/catalog/spiders">SPIDERS</option>
-            <option class="optionBtn" value="insect" routerLink="/catalog/insects" >INSECTS</option>
-        </select>
+        <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
+            <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon> 
+            <span>Beetles</span>
+        </button>
+        <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
+            <mat-icon class="arrow_right_alt">  arrow_right_alt </mat-icon> 
+            <span>Spiders</span>
+        </button>
+        <button mat-button class="menu-button" color="white" routerLink="/catalog/insects">
+            <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon> 
+            <span>Insects</span>
+        </button>
         <mat-divider></mat-divider>
         <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
             <mat-icon>add_box</mat-icon>

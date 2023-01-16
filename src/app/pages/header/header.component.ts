@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { MatSidenav } from '@angular/material/sidenav';
-import { BreakpointObserver} from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,18 @@ import { BreakpointObserver} from '@angular/cdk/layout';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
-  @ViewChild(MatSidenav) 
+  isOpen: boolean = false;
+  @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
- 
+
   constructor(
     private observer: BreakpointObserver,
     public authService: AuthService,
-    ) {
-    }
+  ) {
+  }
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+  }
   ngAfterViewInit() {
     this.observer
       .observe(['(max-width: 800px)'])
@@ -31,5 +34,5 @@ export class HeaderComponent {
         }
       });
   }
-  
+
 }

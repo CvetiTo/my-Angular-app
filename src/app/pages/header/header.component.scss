@@ -52,6 +52,10 @@ mat-sidenav-container {
     margin-right: 8px;
     color: white;
   }
+  mat-icon.arrow_right_alt{
+  color: rgba(74,198,15,1);
+  margin-left: 1rem;
+}
 }
 
 mat-divider {
@@ -72,15 +76,10 @@ mat-divider {
   font-weight: normal;
 }
 .selectBtn{
-  color: white;
-  padding: 0.25rem 0.01rem 0.25rem 0.7rem;
+  padding: 0.25rem 0.01rem 0.25rem 0.5rem;
   border: none;
-  background: rgb(45,87,25);
-  background: linear-gradient(90deg, rgba(45,87,25,1) 0%, rgba(74,198,15,1) 16%, rgba(77,209,14,1) 83%, rgba(45,87,25,1) 100%); 
+  border-radius: 0.2rem;
   box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
   -webkit-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
   -moz-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53); 
-}
-.optionBtn{
-  background-color: rgba(74,198,15,1);
 }
