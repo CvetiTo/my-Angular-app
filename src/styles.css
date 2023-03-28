@@ -8,6 +8,7 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    
 }
 
 h1,
@@ -16,4 +17,14 @@ h3,
 h4,
 p {
     margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden !important;
+    }
+    mat-sidenav-content {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
 }

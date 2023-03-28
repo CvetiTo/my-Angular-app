@@ -1,35 +1,89 @@
+#message h1 {
+    text-align: center;
+    font-size: 6.25rem;
+    padding-top: 0.9rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 2rem;
 
-h1 {
-    text-align: center;
-    font-size: 100px;
-    padding-top: 0.9em;
-    font-weight: 500;
-    color: red;
-    text-shadow: 0px 1px 1px rgba(174, 190, 26, 0.9);
-    margin-bottom: 5rem;  
 }
-h2 {
+
+#message .cont-img {
+    background-image: url(https://cdn.pixabay.com/photo/2014/04/02/10/21/spider-303580__340.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 140px;
+    height: 100px;
+}
+
+#message h2 {
     text-align: center;
-    color: red;
+    color: black;
     font-size: 2rem;
     line-height: 1.6;
-    margin-left: 20rem;
-    margin-right: 20rem;
-}
-a.link {
-    background: #5aaa2b;;
-    padding: 0.2rem 0.5rem;
-    right: 30rem;
-    font-size: small;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
 }
 
-mat-spinner{
-    margin: 10rem 30rem;
-    font-size: 200px;
+#message a.link {
+    background: #5aaa2b;
+    padding: 0.5rem;
+    margin-left: 10rem;
+    font-size: small;
+    text-decoration: none;
+    color: black;
+    border-radius: 1px;
+    background: rgb(45, 87, 25);
+    background: linear-gradient(0deg, rgba(45, 87, 25, 1) 5%, rgba(112, 253, 45, 1) 50%, rgba(45, 87, 25, 1) 100%);
+    box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
 }
- .spinner ::ng-deep circle {
-    stroke: red;
+
+#message .spinner {
+    position: absolute;
+    left: calc(50% - 5rem/2);
+    top: calc(60% + 5rem);
+    ;
+    z-index: 1;
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid red;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #message {
+        margin-top: 0;
+        box-shadow: none;
+        text-align: center;
+    }
+
+    #message h1 {
+        font-size: 5rem;
+        padding-top: 0rem;
+        font-weight: 500;
+        color: black;
+        margin-bottom: 1rem;
+    }
+
+    #message h2 {
+        color: black;
+        font-size: 2rem;
+        line-height: 1.6;
+        font-weight: 300;
+    }
+
+}

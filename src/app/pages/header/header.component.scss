@@ -8,11 +8,12 @@ mat-toolbar {
 }
 
 mat-sidenav {
-  margin: 16px;
+  margin: 0px;
   width: 200px;
+  height: calc(100vh - 250px);
   border-right: none;
-  color: white;
-  border-radius: 10px;
+  border-radius: 2px;
+  color: white; 
   padding: 16px;
   text-align: center;
   background: rgb(45,87,25);
@@ -23,12 +24,11 @@ mat-sidenav {
 }
 
 mat-sidenav-container {
-  height: calc(100vh - 165px);
+  height: calc(100vh - 105px);
 }
 
 .content {
-  margin: 16px;
-  margin-left: 32px;
+  margin: 16px 16px 16px 32px;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -82,4 +82,17 @@ mat-divider {
   box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
   -webkit-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53);
   -moz-box-shadow: 5px 7px 11px -3px rgba(0, 0, 0, 0.53); 
+}
+@media screen and (max-width: 600px) {
+  mat-sidenav {
+      margin-top: 55px;
+  }
+  .content {
+    margin: 16px;
+  }
+}
+@media screen and (max-height: 780px) {   
+  mat-sidenav {
+      height: calc(100vh - 100px);
+    }
 }

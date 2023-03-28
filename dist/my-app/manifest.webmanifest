@@ -1,0 +1,36 @@
+{
+  "name": "Favorite bugs - beetles, insects, spiders",
+  "short_name": "bugs",
+  "theme_color": "#202023",
+  "background_color": "#fafafa",
+  "description": "This is where you can add your favorite bugs like beetles, insects, spiders. A registered user can add, change or delete his own post and can like other people's posts.",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

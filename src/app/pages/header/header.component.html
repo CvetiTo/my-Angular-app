@@ -7,7 +7,7 @@
             close
         </mat-icon>
     </button>
-    <span class="logo">BugsApp<mat-icon>bug_report</mat-icon></span>
+    <span class="logo">Bugs<mat-icon>bug_report</mat-icon></span>
 
     <span class="example-spacer"></span>
     <button *ngIf="!authService.isLoggedIn" mat-icon-button class="example-icon favorite-icon"
@@ -25,7 +25,8 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav">
+    <mat-sidenav #sidenav="matSidenav" [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches" opened>
         <div *ngIf="authService.isLoggedIn">
             <img class="avatar mat-elevation-z8"
                 [src]="authService.userData.photoURL ?? 'assets/images/blank-profile-picture-973461__340.webp'" />
@@ -33,36 +34,68 @@
             <p class="designation">Bugs Engineer</p>
         </div>
         <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button" color="white" routerLink="/home">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-            <span>Home</span>
-        </button>
-        <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/profile">
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
-        </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog">
-            <mat-icon>collections</mat-icon>
-            <span>Catalog</span>
-        </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
-            <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon> 
-            <span>Beetles</span>
-        </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
-            <mat-icon class="arrow_right_alt">  arrow_right_alt </mat-icon> 
-            <span>Spiders</span>
-        </button>
-        <button mat-button class="menu-button" color="white" routerLink="/catalog/insects">
-            <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon> 
-            <span>Insects</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
-            <mat-icon>add_box</mat-icon>
-            <span>New bug</span>
-        </button>
+        <div *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <button mat-button class="menu-button" color="white" routerLink="/home">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                <span>Home</span>
+            </button>
+            <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/profile">
+                <mat-icon>person</mat-icon>
+                <span>Profile</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog">
+                <mat-icon>collections</mat-icon>
+                <span>Catalog</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Beetles</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Spiders</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/insects">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Insects</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
+                <mat-icon>add_box</mat-icon>
+                <span>New bug</span>
+            </button>
+        </div>
+        <div *ngIf="sidenav.mode === 'side'">
+            <button mat-button class="menu-button" color="white" routerLink="/home">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                <span>Home</span>
+            </button>
+            <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/profile">
+                <mat-icon>person</mat-icon>
+                <span>Profile</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog">
+                <mat-icon>collections</mat-icon>
+                <span>Catalog</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/beetles">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Beetles</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/spiders">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Spiders</span>
+            </button>
+            <button mat-button class="menu-button" color="white" routerLink="/catalog/insects">
+                <mat-icon class="arrow_right_alt"> arrow_right_alt </mat-icon>
+                <span>Insects</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button *ngIf="authService.isLoggedIn" mat-button class="menu-button" color="white" routerLink="/add">
+                <mat-icon>add_box</mat-icon>
+                <span>New bug</span>
+            </button>
+        </div>
     </mat-sidenav>
 
     <mat-sidenav-content>
